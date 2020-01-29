@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Select Test</title>
+  <script src="select-services-class.js"></script>
+</head>
+
+<button onclick="llamado()">FILL</button>
+<button onclick="llamado2()">REPLACE</button>
+<button onclick="llamado3()">REPLACE FROM POSITION</button>
+<button onclick="llamado4()">CLEAR</button>
+<select id="selectId">
+  <option value="0" disabled selected>desabilitado</option>
+</select>
+
+<body>
+  <script>
+    var arr = [
+      {
+        id: 1,
+        nombre: "uno"
+      },
+      {
+        id: 2,
+        nombre: "dos"
+      }
+    ];
+
+    var arr2 = [
+      {
+        id: 3,
+        nombre: "tres"
+      },
+      {
+        id: 4,
+        nombre: "cuatro"
+      }
+    ];
+    function llamado() {
+      SELECT.fill(arr, "selectId", "nombre", "id", function (result) {
+        if (result.success) {
+          console.log(result.message);
+        } else {
+          console.log(result.message);
+        }
+      });
+    }
+    function llamado2() {
+      SELECT.replace(arr, "selectId", "nombre", "id", function (result) {
+        if (result.success) {
+          console.log(result.message);
+        } else {
+          console.log(result.message);
+        }
+      });
+    }
+    function llamado3() {
+      SELECT.replaceFromPosition(
+        arr2,
+        "selectId",
+        "nombre",
+        "id",
+        4,
+        function (result) {
+          if (result.success) {
+            console.log(result.message);
+          } else {
+            console.log(result.message);
+          }
+        }
+      );
+    }
+    function llamado4() {
+      SELECT.clearAll("selectId");
+    }
+  </script>
+</body>
+
+</html>
