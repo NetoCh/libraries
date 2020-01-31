@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Select Test</title>
-  <script src="select-services-class.js"></script>
+  <script src="select-services.js"></script>
 </head>
 
 <button onclick="llamado()">FILL</button>
@@ -18,30 +18,35 @@
 </select>
 
 <body>
+  <style>
+    .red{
+      color:red;
+    }
+    .blue{
+      color:blue;
+    }
+  </style>
   <script>
     var arr = [
       {
         id: 1,
-        nombre: "uno"
+        value: 1,
+        nombre: "uno",
+        active: true,
+        color: "red"
       },
       {
         id: 2,
-        nombre: "dos"
+        value: 2,
+        nombre: "dos",
+        active: false,
+        color: "blue"
       }
     ];
 
-    var arr2 = [
-      {
-        id: 3,
-        nombre: "tres"
-      },
-      {
-        id: 4,
-        nombre: "cuatro"
-      }
-    ];
+    var arr3 = ["opt1", "opt2"]
     function llamado() {
-      SELECT.fill(arr, "selectId", "nombre", "id", function (result) {
+      SELECT.fill(arr, "selectId", {text: "nombre", class: "color"},function (result) {
         if (result.success) {
           console.log(result.message);
         } else {
@@ -50,7 +55,7 @@
       });
     }
     function llamado2() {
-      SELECT.replace(arr, "selectId", "nombre", "id", function (result) {
+      SELECT.replace(arr, "selectId", {text: "nombre", id:"id", class: "color"}, function (result) {
         if (result.success) {
           console.log(result.message);
         } else {
@@ -59,20 +64,13 @@
       });
     }
     function llamado3() {
-      SELECT.replaceFromPosition(
-        arr2,
-        "selectId",
-        "nombre",
-        "id",
-        4,
-        function (result) {
-          if (result.success) {
-            console.log(result.message);
-          } else {
-            console.log(result.message);
-          }
+      SELECT.replaceFromPosition(arr3, "selectId", {}, 3,function(result){
+        if(result.success){
+          console.log(result.message);
+        }else{
+          console.log(result.message);
         }
-      );
+      });
     }
     function llamado4() {
       SELECT.clearAll("selectId");
