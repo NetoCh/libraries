@@ -37,6 +37,8 @@
               `color: "blue"`<br>
             `}`<br>
           `];`<br>
+          
+    var arr2 = ["opt1", "opt2"]
 ### Functions <br>
         #1  `SELECT.fill(arr, "selectId", {text: "nombre", class: "color"},function (result) {`
             `if (result.success) {`
