@@ -49,14 +49,14 @@
                 console.log(result.message);
               }
             });
-          #3 SELECT.replaceFromPosition(arr, "selectId", {}, 3,function(result){
-                if(result.success){
-                  console.log(result.message);
-                }else{
-                  console.log(result.message);
-                }
-              });
-          #4 SELECT.clearAll("selectId");
+        #3 SELECT.replaceFromPosition(arr, "selectId", {}, 3,function(result){
+              if(result.success){
+                console.log(result.message);
+              }else{
+                console.log(result.message);
+              }
+            });
+        #4 SELECT.clearAll("selectId");
           
          
           
