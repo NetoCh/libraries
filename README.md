@@ -1,8 +1,8 @@
 # Select Services
 
-1.  SELECT.fill(data,selectId, {}, function(result){});                                                                                     
+1.  SELECT.fill(data,selectId, {}, function(result){});                                                                                
 1.  SELECT.replace(data,selectId, {}, function(result){});
-1.  SELECT.replaceFromStartingPosition(data,"selectId", {}, startingPosition ,function(result){}) 
+1.  SELECT.replaceFromPosition(data,"selectId", {}, startingPosition ,function(result){}) 
 1.  SELECT.clearAll(selectedId);
 
 ### Parameters
