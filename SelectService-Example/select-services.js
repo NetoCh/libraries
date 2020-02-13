@@ -87,7 +87,7 @@ function SelectServices() {
       if (typeof properties === "object" && properties !== fn) {
         let select = document.getElementById(elementId);
         let selectLength = select.options.length;
-        if (startingPoint < selectLength) {
+        if (startingPoint <= selectLength) {
           let amountToPop = selectLength - startingPoint;
           for (let i = 0; i < amountToPop; i++) {
             select.remove(startingPoint);
